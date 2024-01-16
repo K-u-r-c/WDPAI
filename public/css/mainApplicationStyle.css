@@ -1,0 +1,196 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.left-bar-small {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3vw;
+    height: 100vh;
+    background-color: #6EBE45;
+}
+
+.toggleLeftBarButton {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border: none;
+    background: url("./../images/menu.svg") transparent 50% / cover no-repeat;
+}
+
+.help {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border-radius: 100%;
+    background: url("./../images/help.svg") no-repeat lightgray;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+}
+
+.user {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border-radius: 100%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.left-bar-big {
+    float: left;
+    width: 15vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #F8F8F8;
+    box-shadow: 0px 0px 0px 2px rgba(220, 220, 220);
+    position: relative;
+    overflow-y: scroll;
+}
+
+.logo {
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 2.5vw;
+    text-align: center;
+    color: black;
+}
+
+.logo-e {
+    color: #6EBE45;
+}
+
+.logo-s {
+    color: #558EE0;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.items ul {
+    list-style-type: none;
+    padding: 0 0 1vh 0.5vw;
+}
+
+.items ul li {
+    padding: 2px 0;
+}
+
+.items p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4vw;
+    color: #6EBE45;
+    font-family: Montserrat;
+    font-weight: bolder;
+    word-wrap: break-word 
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.2vw;
+    margin-bottom: 0.5rem;
+}
+
+.icon-text span {
+    font-family: Montserrat;
+    font-weight: bolder;
+    padding-left: 0.2rem;
+}
+
+.icon-text a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.right-pane {
+    display: flex;
+    flex-direction: column;
+    width: 82vw;
+    height: 100vh;
+    float: left;
+    background-color: #F8F8F8;
+}
+
+.header {
+    width: 100%;
+    height: 5vh;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8F8F8;
+    box-shadow: 0px 2px 0px 0px rgba(220, 220, 220);
+}
+
+.page-title {
+    font-family: Montserrat;
+    font-size: 1.2vw;
+    font-weight: bolder;
+    padding-left: 1rem;
+}
+
+.content {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 8;
+    background-color: #FFF;
+}
+
+.left-pane.collapsed {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+@media (max-width: 1000px) {
+    .left-bar-small {
+        width: 10vw;
+    }
+
+    .left-bar-big {
+        display: none;
+    }
+    
+    .logo {
+        font-family: Montserrat;
+        font-size: 12vw;
+    }
+
+    .right-pane {
+        width: 90vw;
+    }
+
+    .page-title {
+        font-size: 5.5vw;
+        padding-left: 1rem;
+    }
+
+    .items p {
+        font-size: 5vw;
+    }
+
+    .icon-text {
+        font-size: 4.5vw;
+    }
+
+    .icon-text img {
+        transform: scale(2);
+        padding: 2vw;
+    }
+}

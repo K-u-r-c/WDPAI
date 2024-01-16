@@ -1,0 +1,249 @@
+.headings {
+    width: 100%;
+    height: 4vh;
+    z-index: 9;
+    background-color: #F8F8F8;
+    box-shadow: 0px 2px 0px 0px rgba(220, 220, 220);
+    font-family: Montserrat;
+    font-size: large;
+    font-weight: bolder;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #C0C0C0;
+}
+
+.headings-status {
+    float: left;
+    width: 50px;
+    margin-left: -8px;
+}
+
+.headings-topics {
+    float: left;
+    width: 50%;
+    margin-left: -8px;
+}
+
+.headings-replies {
+    float: left;
+    width: 8%;
+    margin-left: -36px;
+}
+
+.headings-views {
+    float: left;
+    width: 8%;
+}
+
+.headings-users {
+    float: left;
+    width: 42px;
+}
+
+.headings-date {
+    float: left;
+    width: 8%;
+}
+
+.forum-elements {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    overflow: scroll;
+}
+
+.forum-elements li {
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.forum-elements li:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.forum-elements li:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.status-element {
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border-radius: 100%;
+}
+
+.forum-text {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #266ED7;    
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posted-by-element {
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border-radius: 100%;
+}
+
+.forum-elements span {
+    font-family: Montserrat;
+    font-weight: bolder;
+    width: 8%;
+}
+
+.delete-post {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0; 
+    border-radius: 10%;
+    background-image: url('../images/delete.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 74, 74);
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.add-post-button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    background-color: #6EBE45;
+    background-image: url('../images/add_post.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.floating-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 9999;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post-form input[type="text"],
+.post-form textarea {
+    font-family: Montserrat;
+    font-size: 1rem;
+    padding: 10px 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form textarea {
+    height: 300px;
+    resize: none;
+}
+
+.post-form input[type="submit"] {
+    font-family: Montserrat;
+    padding: 10px 20px;
+    background-color: #6EBE45;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button {
+    font-family: Montserrat;
+    background-color: rgb(215, 61, 61);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .headings {
+        height: 4vh;
+        font-size: 3vw;
+    }
+
+    .headings-status {
+        width: 20%;
+    }
+
+    .headings-topics {
+        width: 80%;
+    }
+
+    .headings-replies,
+    .headings-views,
+    .headings-users,
+    .headings-date {
+        display: none;
+    }
+
+    .forum-text {
+        width: 80%;
+        font-size: 4vw;
+    }
+
+    .posted-by-element,
+    .forum-elements span {
+        display: none;
+    }
+
+    .forum-elements li {
+        height: 8vh;
+    }
+
+    .add-post-button {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .floating-window {
+        width: 90%;
+        height: 30%;
+    }
+
+    .post-form input[type="text"],
+    .post-form textarea {
+        font-size: 5vw;
+    }
+
+    .post-form input[type="submit"] {
+        font-size: 5vw;
+    }
+}

@@ -11,6 +11,7 @@ services:
       - .:/app/
     links:
       - php
+      - db
 
   php:
     build:
@@ -18,3 +19,25 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
+
+  db:
+    container_name: db
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+        - 15432:5432
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jak.kurc@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - "5050:80"
+    depends_on:
+      - db

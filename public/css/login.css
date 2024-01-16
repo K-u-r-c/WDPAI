@@ -1,0 +1,275 @@
+body {
+    background: #ffffff;
+    margin: 0;
+}
+
+.left-box {
+    width: 50vw;
+    height: 100vh;
+    display: block;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+.right-box {
+    background: url("../images/rightimage.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.logo {
+    width: 396px;
+    height: 92px;
+    margin-left: 4rem;
+    background: url("../images/logo.svg") no-repeat;
+    background-size: contain;
+}
+
+.motivation-text {
+    font-family: Montserrat;
+    width: 60%;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.login-block {
+    width: 60%;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.login-block .input-fields input {
+    padding: 0 20px 0 50px;
+    margin-bottom: 0.5rem;
+}
+
+.login-block input#email {
+    background: #fff url('../images/mail.png') 10px no-repeat;
+    background-size: 20px 20px;
+}
+
+.login-block input#password {
+    background: #fff url('../images/password.png') 10px no-repeat;
+    background-size: 20px 20px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #6EBE45;
+}
+
+.login-button {
+    background: #6EBE45;
+    border-radius: 5px;
+    border: 1px solid #5FB234;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #5FB234;
+}
+
+.forgot-password {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #266ED7;    
+}
+
+.text-line {
+    font-family: Montserrat;
+    font-weight: bolder;
+    width: 20vw;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+
+    &:after,
+    &:before {
+        content: "";
+        flex: 1 1;
+        border-bottom: 2px solid #C0C0C0;
+        margin: auto;
+    }
+    &:after {
+        margin-left: 1rem;
+    }
+    &:before {
+        margin-right: 1rem;
+    }
+}
+
+.login-google {
+    width: 25%;
+    height: 10%;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-google-icon {
+    width: calc(96px / 2.5);
+    height: calc(96px / 2.5);
+}
+
+.login-google-text {
+    text-align: center;
+    font-family: Alatsi;
+    font-size: large;
+    font-style: bolder;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.register-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.register-text {
+    font-family: Montserrat;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #BABABA;       
+}
+
+.register-button {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #266ED7;    
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .left-box {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-box {
+        display: none;
+    }
+
+    .login-box {
+        width: 100vw;
+        height: auto;
+    }
+
+    .logo {
+        width: calc(392px * 2);
+        height: calc(92px * 2);
+        background-size: contain;
+        margin-left: 12%;
+    }
+
+    .motivation-text {
+        width: 70%;
+        font-size: 40px;
+    }
+
+    .login-block {
+        width: 80vw;
+    }
+
+    .login-block input {
+        height: calc(42px * 2);
+        font-size: 28px;
+    }
+
+    .login-block .input-fields input {
+        padding: 0 20px 0 100px;
+    }
+
+    .login-block input#username {
+        background: #fff url('../images/user.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .login-block input#password {
+        background: #fff url('../images/password.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .forgot-password {
+        font-size: 30px;
+        margin-top: 2rem;
+    }
+
+    .text-line {
+        width: 60vw;
+        margin-top: 2rem;
+        font-size: 30px;
+
+        &:after,
+        &:before {
+            border-bottom: 5px solid #C0C0C0;
+        }
+    }
+
+    .login-google {
+        width: 40%;
+        margin-top: 2rem;
+    }
+
+    .login-google-icon {
+        width: calc(96px * 0.8);
+        height: calc(96px * 0.8);
+    }
+
+    .login-google-text {
+        font-size: 35px;
+    }
+
+    .register-text {
+        margin-top: 2rem;
+        font-size: 30px;      
+    }
+
+    .register-button {
+        font-size: 30px;
+    }
+}

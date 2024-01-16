@@ -1,0 +1,308 @@
+body {
+    background: #ffffff;
+    margin: 0;
+}
+
+.right-box {
+    width: 50vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    right: 0;
+}
+
+.register-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    overflow-y: auto;
+}
+
+.left-box {
+    background: url("../images/leftimage.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    width: 396px;
+    height: 92px;
+    margin-left: 4rem;
+    background: url("../images/logo.svg") no-repeat;
+    background-size: contain;
+}
+
+.motivation-text {
+    font-family: Montserrat;
+    font-size: larger;
+    width: 500px;
+    margin-top: 0;
+    margin-bottom: 2%;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.register-block {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.register-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bolder;
+    outline: none;
+}
+
+.register-block .input-fields input {
+    padding: 0 20px 0 50px;
+    margin-bottom: 0.5rem;
+}
+
+.register-block input#username {
+    background: #fff url('../images/user.png') 15px no-repeat;
+    background-size: 20px 20px;
+}
+
+.register-block input#email {
+    background: #fff url('../images/mail.png') 15px no-repeat;
+    background-size: 20px 20px;
+}
+
+.register-block input#password {
+    background: #fff url('../images/password.png') 15px no-repeat;
+    background-size: 20px 20px;
+}
+
+.register-block input#repeat-password {
+    background: #fff url('../images/password.png') 15px no-repeat;
+    background-size: 20px 20px;
+}
+
+.register-block input:active, .register-block input:focus {
+    border: 1px solid #6FA3EF;
+}
+
+.register-button {
+    background: #6FA3EF;
+    border-radius: 5px;
+    border: 1px solid #558EE0;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background: #558EE0;
+}
+
+.privacy-policy {
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #BABABA; 
+    overflow-wrap: break-word;
+    width: 50%;
+    text-align: center;
+}
+
+.privacy-policy-link {
+    text-decoration: underline;
+    color: #BABABA;
+}
+
+.text-line {
+    font-family: Montserrat;
+    font-weight: bolder;
+    width: 20vw;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+
+    &:after,
+    &:before {
+        content: "";
+        flex: 1 1;
+        border-bottom: 2px solid #C0C0C0;
+        margin: auto;
+    }
+    &:after {
+        margin-left: 1rem;
+    }
+    &:before {
+        margin-right: 1rem;
+    }
+}
+
+.register-google {
+    width: 25%;
+    height: 10%;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.register-google-icon {
+    width: calc(96px / 2.5);
+    height: calc(96px / 2.5);
+}
+
+.register-google-text {
+    text-align: center;
+    font-family: Alatsi;
+    font-size: large;
+    font-style: bolder;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.login-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-text {
+    font-family: Montserrat;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #BABABA;       
+}
+
+.login-button {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #266ED7;    
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .right-box {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-box {
+        display: none;
+    }
+
+    .register-box {
+        width: 100vw;
+        height: auto;
+    }
+
+    .logo {
+        width: calc(392px * 2);
+        height: calc(92px * 2);
+        background-size: contain;
+        margin-left: 18%;
+    }
+
+    .motivation-text {
+        width: 70%;
+        font-size: 40px;
+    }
+
+    .register-block {
+        width: 80vw;
+    }
+
+    .register-block input {
+        height: calc(42px * 2);
+        font-size: 28px;
+    }
+
+    .register-block .input-fields input {
+        padding: 0 20px 0 100px;
+    }
+
+    .register-block input#email {
+        background: #fff url('../images/mail.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .register-block input#username {
+        background: #fff url('../images/user.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .register-block input#password {
+        background: #fff url('../images/password.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .register-block input#repeat-password {
+        background: #fff url('../images/password.png') 20px no-repeat;
+        background-size: 50px;
+    }
+
+    .privacy-policy {
+        width: 80%;
+        font-size: 30px;
+        margin-top: 2rem;
+    }
+
+    .text-line {
+        width: 60vw;
+        margin-top: 2rem;
+        font-size: 30px;
+
+        &:after,
+        &:before {
+            border-bottom: 5px solid #C0C0C0;
+        }
+    }
+
+    .register-google {
+        width: 40%;
+        margin-top: 2rem;
+    }
+
+    .register-google-icon {
+        width: calc(96px * 0.8);
+        height: calc(96px * 0.8);
+    }
+
+    .register-google-text {
+        font-size: 35px;
+    }
+
+    .login-text {
+        margin-top: 2rem;
+        font-size: 30px;      
+    }
+
+    .login-button {
+        font-size: 30px;
+    }
+}
