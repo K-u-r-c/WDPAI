@@ -110,6 +110,34 @@ Pre-requisites:
 
        docker compose up
 
+## Used Technologies
+Frontend
+    
+    HTML 5
+    CSS 3
+    vanilla Javascript
+
+Backend (API)
+    
+    PHP 8
+
+Database
+    
+    PostgreSQL
+    
+Web server
+    
+    Nginx
+
+Containerization
+    
+    Docker
+
+
+## Database Diagram
+<img width="1101" alt="image" src="https://github.com/K-u-r-c/WDPAI/assets/58849519/05fe8918-4fab-449e-bcde-9bd1a71776d3">
+
+
 ## License
 
 Copyright (c) 2023 Jakub Kurc
