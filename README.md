@@ -108,7 +108,7 @@ Pre-requisites:
 
 2. Run the following commands in the root directory of the project:
 
-   docker compose up
+       docker compose up
 
 ## License
 
