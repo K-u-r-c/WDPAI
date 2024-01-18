@@ -1,4 +1,4 @@
-# Project Name
+# EyeSmart
 
 The application monitors time spent in front of the screen, allows you to adjust profile settings and participate in a public forum where you can exchange knowledge and experience. In a special section of the forum, certified ophthalmologists can post their own topics. The application offers sets of eye exercises and optional break notifications. Users can also redeem points earned by using the app for rewards in the rewards store.
 
