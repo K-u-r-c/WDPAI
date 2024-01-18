@@ -50,8 +50,6 @@ class ForumController extends AppController {
             http_response_code(200);
 
             echo json_encode($this->postRepository->getPostsByTitle($decoded['search']));
-
-            //$this->render('forum', ['posts' => $posts]);
         }
     }
 }

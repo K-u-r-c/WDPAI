@@ -180,6 +180,11 @@ body {
     cursor: pointer;
 }
 
+.search-field {
+    font-family: Montserrat;
+    cursor: pointer;
+}
+
 @media (max-width: 1000px) {
     .left-box {
         width: 100vw;

@@ -2,24 +2,22 @@ const search = document.querySelector('input[placeholder="Search posts..."]');
 const forumElements = document.querySelector(".forum-elements");
 
 search.addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
+    event.preventDefault();
 
-        const data = { search: this.value };
+    const data = { search: this.value };
 
-        fetch("/search", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then(function(response) {
-            return response.json();
-        }).then(function(posts) {
-            forumElements.innerHTML = "";
-            loadPosts(posts);
-        }); 
-    }
+    fetch("/search", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        return response.json();
+    }).then(function(posts) {
+        forumElements.innerHTML = "";
+        loadPosts(posts);
+    }); 
 });
 
 function loadPosts(posts) {

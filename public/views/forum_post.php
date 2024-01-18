@@ -92,11 +92,11 @@
                 </div>
                 <?php foreach ($comments as $comment): ?>
                     <?php
-                    $comment_user_id = $comment->getUserId();
-                    $comment_Date = $comment->getDate();
-                    $comment_user = $userRepository->getUserById($comment_user_id);
-                    $comment_user_name = $comment_user->getName();
-                    $comment_user_profile_picture_path = "./public/images/user_profiles/" . $comment_user->getProfileImagePath();
+                        $comment_user_id = $comment->getUserId();
+                        $comment_Date = $comment->getDate();
+                        $comment_user = $userRepository->getUserById($comment_user_id);
+                        $comment_user_name = $comment_user->getName();
+                        $comment_user_profile_picture_path = "./public/images/user_profiles/" . $comment_user->getProfileImagePath();
                     ?>
 
                     <div class="comment">
@@ -105,7 +105,7 @@
                             <h3 class="comment-user-name"><?php echo $comment_user_name ?>:</h3>
                             <p class="comment-date"><?php echo date('Y-m-d H:i', strtotime($comment_Date)); ?></p>
                         </div>
-                        <p><?php echo $comment->getContent(); ?></p>
+                        <div><?php echo $comment->getContent(); ?></div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -113,8 +113,8 @@
     </div>
 
     <div id="floating-window" class="floating-window">
-        <form class="comment-form" action="forum_post" onsubmit="return validateForm()" method="POST">
-            <textarea name="content" id="content" placeholder="Content" oninput="validateForm()"></textarea>
+        <form class="comment-form" action="forum_post" onsubmit="" method="POST">
+            <textarea name="content" id="content" placeholder="Content" oninput=""></textarea>
 
             <?php 
             require_once 'src/repository/UserRepository.php';
@@ -125,11 +125,19 @@
 
             <input type="hidden" name="post_id" value="<?php echo $postId ?>">
             <input type="hidden" name="user_id" value="<?php echo $user->getIdUser() ?>">
-            <input type="submit" id="submit-button" value="Submit" disabled>
-            <button class="close-button" onclick="closeForm(event)">Close</button>
+
+            <div class="add-comment-buttons">
+                <input type="submit" id="submit-button" value="Submit">
+                <button class="close-button" onclick="closeForm(event)">Close</button>
+            </div>
         </form>
     </div>
 
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'content' );
+    </script>
+    
     <script src="../../public/scripts/addComment.js"></script>
 </body>
 </html>

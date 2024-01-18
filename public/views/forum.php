@@ -65,7 +65,7 @@
     <div class="right-pane">
         <div class="header">
             <p class="page-title">Forum - General</p>
-            <input type="text" id="searchField" placeholder="Search posts...">
+            <input type="text" id="searchField" class="search-field" placeholder="Search posts...">
         </div>
 
         <div class="content">
@@ -85,15 +85,6 @@
             $userRepository = new UserRepository();
             $postRepository = new PostRepository();
             $posts = $postRepository->getAllPosts();
-
-            usort($posts, function($a, $b) {
-                $statusOrder = ['pinned', 'open', 'resolved'];
-                $aStatus = $a->getStatus();
-                $bStatus = $b->getStatus();
-                $aIndex = array_search($aStatus, $statusOrder);
-                $bIndex = array_search($bStatus, $statusOrder);
-                return $aIndex - $bIndex;
-            });
             ?>
 
             <ul class="forum-elements">
@@ -151,9 +142,9 @@
     <a href="#" class="add-post-button" onclick="openForm()"></a>
 
     <div id="floating-window" class="floating-window">
-        <form class="post-form" action="forum" onsubmit="return validateForm()" method="POST">
-            <input type="text" name="title" id="title" placeholder="Title" oninput="validateForm()">
-            <textarea name="content" id="content" placeholder="Content" oninput="validateForm()"></textarea>
+        <form class="post-form" action="forum" onsubmit="" method="POST">
+            <input type="text" name="title" id="title" placeholder="Title" oninput="">
+            <textarea name="content" id="content" placeholder="Content"></textarea>
 
             <?php 
             require_once 'src/repository/UserRepository.php';
@@ -163,11 +154,18 @@
             ?>
 
             <input type="hidden" name="user_id" value="<?php echo $user->getIdUser() ?>">
-            <input type="submit" id="submit-button" value="Submit" disabled>
-            <button class="close-button" onclick="closeForm(event)">Close</button>
+
+            <div class="add-post-buttons">
+                <input type="submit" id="submit-button" value="Submit">
+                <button class="close-button" onclick="closeForm(event)">Close</button>
+            </div>
         </form>
     </div>
 
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
     <script src="../../public/scripts/addPost.js"></script>
 </body>
 </html>
